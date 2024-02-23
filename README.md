@@ -5,7 +5,7 @@ Automatic_Switching_L3_L4_L7_js2py_py2js
 - Install Python 3.10 ↑ Recommended
 - Install libraries -> pip install -r requirements.txt
 - python3 ./Automatic_Switching_Program_under_Multi_Servers_ASPS_js2py.py
-</ br> or </ br> 
+- or
 - python ./Automatic_Switching_Program_under_Multi_Servers_ASPS_js2py.py
 - Modify the file name 'Server_option.txt'
 - Change values for your needs 😉
