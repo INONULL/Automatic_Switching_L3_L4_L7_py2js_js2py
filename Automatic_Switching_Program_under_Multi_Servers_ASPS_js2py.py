@@ -2,8 +2,8 @@
 # server_status_checker_cython.pyx
 
 import sys, os
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QMessageBox, QMenuBar, QAction
-from PySide6.QtGui import QIcon, QFont
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QMessageBox, QMenuBar
+from PySide6.QtGui import QIcon, QFont, QAction
 from PySide6.QtCore import Qt, QThread, Signal, QRunnable, QThreadPool
 import requests, socket, ping3
 from urllib.parse import unquote
@@ -245,7 +245,7 @@ def http_https_ping(url, timeout):
         return f'[status: 500++] L7_failed to get data'
 ###############################################<<<<<L3>>>>>#################################################
 class ServerChecker_L3_47_Thread(QThread):
-    status_signal_47 = pyqtSignal(bool)
+    status_signal_47 = Signal(bool)
     def run(self):
         global ping_L3_47
         while ServerStatusChecker.trigger:
@@ -265,7 +265,7 @@ class ServerChecker_L3_47_Thread(QThread):
                     python_2_js(server_47, port_47, f'L3_Ping failed: {str(e)}')
 
 class ServerChecker_L3_48_Thread(QThread):
-    status_signal_48 = pyqtSignal(bool)
+    status_signal_48 = Signal(bool)
     def run(self):
         global ping_L3_48
         while ServerStatusChecker.trigger:
@@ -286,7 +286,7 @@ class ServerChecker_L3_48_Thread(QThread):
 #############################################################################################################
 ####################################<<<<<<<<<<<<L4+Socket>>>>>>>>>>>>####################################
 class ServerChecker_L4_47_Thread(QThread):
-    status_signal_47 = pyqtSignal(bool)
+    status_signal_47 = Signal(bool)
     def run(self):
         global ping_L4_47
         while ServerStatusChecker.trigger:
@@ -306,7 +306,7 @@ class ServerChecker_L4_47_Thread(QThread):
                         python_2_js(server_47, port_47, f'L4_Ping failed: {str(e)}')
 
 class ServerChecker_L4_47_socket_Thread(QThread):
-    status_signal_47_socket = pyqtSignal(bool)
+    status_signal_47_socket = Signal(bool)
     def run(self):
         global ping_L4_47
         while ServerStatusChecker.trigger:
@@ -326,7 +326,7 @@ class ServerChecker_L4_47_socket_Thread(QThread):
                         python_2_js(server_47, port_47_sokcet, f'L4_Ping failed: {str(e)}')
 
 class ServerChecker_L4_48_Thread(QThread):
-    status_signal_48 = pyqtSignal(bool)
+    status_signal_48 = Signal(bool)
     def run(self):
         global ping_L4_48
         while ServerStatusChecker.trigger:
@@ -346,7 +346,7 @@ class ServerChecker_L4_48_Thread(QThread):
                     python_2_js(server_48, port_48, f'L4_Ping failed: {str(e)}')
 
 class ServerChecker_L4_48_socket_Thread(QThread):
-    status_signal_48_socket = pyqtSignal(bool)
+    status_signal_48_socket = Signal(bool)
     def run(self):
         global ping_L4_48
         while ServerStatusChecker.trigger:
@@ -367,7 +367,7 @@ class ServerChecker_L4_48_socket_Thread(QThread):
 #####################################################################################################
 ########################################<<<<<<<<<<L7>>>>>>>>>>>########################################
 class ServerChecker_L7_47_Thread(QThread):
-    status_signal_47 = pyqtSignal(bool)
+    status_signal_47 = Signal(bool)
     def run(self):
         global ping_L7_47
         while ServerStatusChecker.trigger:
@@ -386,7 +386,7 @@ class ServerChecker_L7_47_Thread(QThread):
                     python_2_js(server_47, port_47, f'L7_failed to get data {e}')
             time.sleep(1)
 class ServerChecker_L7_48_Thread(QThread):
-    status_signal_48 = pyqtSignal(bool)
+    status_signal_48 = Signal(bool)
     def run(self):
         global ping_L7_48
         while ServerStatusChecker.trigger:
@@ -410,7 +410,7 @@ class py2js_server_core(QThread):
     js2py_Extension = []
     js2py_Internal = []
     previous_data = ''
-    py2js_run_sound = pyqtSignal()
+    py2js_run_sound = Signal()
     def __init__(self):
         super(py2js_server_core, self).__init__()
         self.app_py2js = Flask(__name__)
@@ -532,7 +532,7 @@ class py2js_server_core(QThread):
     
 ###########################py2js_server#####################################
 class py2js_server(QThread):  ### Trhead link to the main to start
-    py2js_run = pyqtSignal(bool, str)
+    py2js_run = Signal(bool, str)
     def __init__(self):
         super(py2js_server, self).__init__()
         self.flask_thread= None
@@ -561,7 +561,7 @@ class py2js_server(QThread):  ### Trhead link to the main to start
 ##############################Inernal_py2py##############################    
 
 class pyserver_Thread(QThread):
-    py2js_run = pyqtSignal(bool, str)
+    py2js_run = Signal(bool, str)
     def run(self):
         url_connect = f'http://localhost:{py2js_port}/connect'
         url_endpoint = f'http://localhost:{py2js_port}/endpoint'
