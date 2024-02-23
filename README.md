@@ -29,5 +29,5 @@ Automatic_Switching_L3_L4_L7_js2py_py2js
 # Server1_and_Server2_Down
 ![alt text](https://github.com/INONULL/Automatic_Switching_L3_L4_L7_py2js_js2py/blob/main/How_It_Works_Images/Server1_and_Server2_Down.png?raw=true) <br />
 
-# Server_Condig
+# Server_Config
 ![alt text](https://github.com/INONULL/Automatic_Switching_L3_L4_L7_py2js_js2py/blob/main/How_It_Works_Images/Server_Config.png?raw=true) <br />
