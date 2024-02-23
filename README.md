@@ -9,9 +9,10 @@ Automatic_Switching_L3_L4_L7_js2py_py2js
 - python ./Automatic_Switching_Program_under_Multi_Servers_ASPS_js2py.py
 - Modify the file name 'Server_option.txt'
 - Change values for your needs 😉
+# This Can Be Used As A Monitoring Tool!
 
 
-# Images
+# Images (Since, Server is running in local..)
 
 # Main_GUI
 ![alt text](https://github.com/INONULL/Automatic_Switching_L3_L4_L7_py2js_js2py/blob/main/How_It_Works_Images/Main_Gui.png?raw=true) <br />
