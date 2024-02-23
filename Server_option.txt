@@ -1,0 +1,15 @@
+option_socket=False
+option_request=False
+server_47=127.0.0.1:8080/favicon.ico
+server_48=127.0.0.1:8181/favicon.ico
+port_47=8080
+port_48=8181
+log_switch=False
+socket_view=False
+py2js=True
+py2js_port=9000
+font_size=12
+timeout_L3=2
+timeout_L4=2
+timeout_L7=10
+                     

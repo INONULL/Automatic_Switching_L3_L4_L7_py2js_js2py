@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "L7Auto_Switching(Duplexer)",
+  "description": "L7Auto_Switching(Duplexing) Program, the program is intended to be used for identical servers with two different IPs\nCoded by LEE JUNSUNG",
+  "version": "2.0",
+  "action": {
+    "default_title": "L7Auto_Switching(Duplexing) Program"
+  },
+  "host_permissions":["<all_urls>"],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "contextMenus"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "matches" : ["http://*/*","https://*/*"]
+  }
+}
